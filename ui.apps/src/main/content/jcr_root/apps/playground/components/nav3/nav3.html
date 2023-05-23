@@ -1,0 +1,36 @@
+<div class="cmp-nav" data-sly-use.nav3="com.nsc.core.models.Nav3Model"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = nav3.contents.empty, classAppend = 'cq-dd-image'}"></sly>
+    <!-- component start -->
+
+<!--/* <ul data-sly-list="${nav3.multifield}"> */-->
+<!--/*     <li>${item.title}</li> */-->
+<!--/* </ul> */-->
+    <div id="carouselExampleDark" class="carousel carousel-${nav3.color} slide" data-bs-ride="carousel">
+        <div class="carousel-indicators" data-sly-list.content="${nav3.contents}">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="${contentList.index}"
+                    class="${contentList.first ? 'active' : ''}" aria-current="true" aria-label="Slide ${contentList.count}">
+            </button>
+        </div>
+        <div class="carousel-inner" data-sly-list.content="${nav3.contents}">
+            <div class="carousel-item ${contentList.first ? 'active' : ''}" data-bs-interval="10000">
+                <img src="${content.image}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>${content.Title}</h5>
+                    <p>${content.Text}</p>
+                </div>
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+

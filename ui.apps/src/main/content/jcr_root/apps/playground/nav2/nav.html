@@ -1,0 +1,11 @@
+<div class="cmp-nav" data-sly-use.nav="com.nsc.core.models.NavModel">
+    <h2>${nav.menuname}</h2>
+    <ul>
+        <li>${nav.currentPage.title}</li>
+    </ul>
+    <ul data-sly-list.sub="${nav.currentPage.listChildren}">
+        <li><a href="${sub.path}.html">${sub.title}</a></li>
+    </ul>
+    <img src="${properties.image}">
+    <h1>${properties.select}</h1>
+</div>

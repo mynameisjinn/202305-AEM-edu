@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/playground" mode="merge"/>
+    <filter root="/content/playground" mode="merge"/>
+    <filter root="/content/dam/playground" mode="merge">
+        <exclude pattern="/content/dam/playground(/.*)?"/>
+        <include pattern="/content/dam/playground/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/playground/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/playground" mode="merge"/>
+</workspaceFilter>

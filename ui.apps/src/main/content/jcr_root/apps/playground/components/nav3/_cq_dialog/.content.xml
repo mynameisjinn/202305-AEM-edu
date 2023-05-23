@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <select
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="color"
+                        name="./select"
+                        required="false">
+                        <items jcr:primaryType="nt:unstructured">
+                            <light
+                                jcr:primaryType="nt:unstructured"
+                                text="light"
+                                value="1"/>
+                            <dark
+                                jcr:primaryType="nt:unstructured"
+                                text="dark"
+                                value="2"/>
+                        </items>
+                    </select>
+                    <Contents
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Contents">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./Contents">
+                            <items jcr:primaryType="nt:unstructured">
+                                <Title
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Title"
+                                    name="./Title"
+                                    required="false"
+                                    value=""/>
+                                <Text
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Text"
+                                    name="./Text"
+                                    required="false"
+                                    value=""/>
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                    autoStart="{Boolean}false"
+                                    class="cq-droptarget"
+                                    fieldLabel="Image"
+                                    fileNameParameter="./fileName"
+                                    fileReferenceParameter="./image"
+                                    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                    multiple="{Boolean}false"
+                                    name="./file"
+                                    required="false"
+                                    title="Upload Image Asset"
+                                    uploadUrl="${suffix.path}"
+                                    useHTML5="{Boolean}true"/>
+                            </items>
+                        </field>
+                    </Contents>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
